@@ -25,10 +25,7 @@ use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
  * @property string|null $first_name
  * @property string|null $full_name
  * @property string|null $last_name
-<<<<<<< HEAD
-=======
  * @property string|null $lang
->>>>>>> 07cc6b5c (.)
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Modules\Media\Models\Media> $media
  * @property int|null $media_count
  * @property \Illuminate\Database\Eloquent\Collection<int, DeviceUser> $mobileDeviceUsers
@@ -105,18 +102,6 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
         return $this->extra->modelScope();
     }
 
-<<<<<<< HEAD
-    public function getAvatarUrl(): string
-    {
-        // return filament()->getUserAvatarUrl($this);
-        $avatar = $this->getFirstMediaUrl();
-
-        if (mb_strlen($avatar) > 5) {
-            return $avatar;
-        }
-
-        $email = trim(is_string($this) ? $this : (string) $this->email);
-=======
     /**
      * Ottiene l'URL dell'avatar dell'utente.
      * 
@@ -131,16 +116,11 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
 
         // Corretto il controllo errato su $this
         $email = trim((string) $this->email);
->>>>>>> 07cc6b5c (.)
         // 'MyEmailAddress@example.com'
         $email = mb_strtolower($email);
         // 'myemailaddress@example.com'
         $hash = hash('sha256', $email);
-<<<<<<< HEAD
-        $avatar = 'https://gravatar.com/avatar/'.$hash.'?s=64';
-=======
         $avatar = 'https://gravatar.com/avatar/' . $hash . '?s=64';
->>>>>>> 07cc6b5c (.)
 
         return $avatar;
 
@@ -155,8 +135,6 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
         // return $this->getFirstMediaUrl();
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Ottiene la lingua dell'utente.
      * 
@@ -180,7 +158,6 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
         return $userLang;
     }
 
->>>>>>> 07cc6b5c (.)
     /** @return array<string, string> */
     protected function casts(): array
     {

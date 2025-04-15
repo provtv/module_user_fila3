@@ -22,17 +22,6 @@ class RetrieveSocialiteUserAction
      */
     public function execute(string $provider, SocialiteUserContract $user): ?SocialiteUser
     {
-<<<<<<< HEAD
-        $res = SocialiteUser::query()
-            ->with(['user'])
-            ->where('provider', $provider)
-            ->where('provider_id', $user->getId())
-            ->first();
-
-        $res->update([
-            // @phpstan-ignore property.notFound
-            'token' => $user->token,
-=======
         if (empty($provider)) {
             throw new \InvalidArgumentException('Il provider non può essere vuoto');
         }
@@ -99,7 +88,6 @@ class RetrieveSocialiteUserAction
 
         $res->update([
             'token' => $token,
->>>>>>> 07cc6b5c (.)
         ]);
 
         return $res;

@@ -15,11 +15,6 @@ use Filament\Forms\Components\TextInput;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\HtmlString;
 use Modules\User\Filament\Resources\UserResource\Pages;
-<<<<<<< HEAD
-use Modules\User\Filament\Resources\UserResource\Widgets\UserOverview;
-use Modules\Xot\Filament\Resources\XotBaseResource;
-
-=======
 use Modules\User\Filament\Resources\UserResource\RelationManagers;
 use Modules\User\Filament\Resources\UserResource\Widgets\UserOverview;
 use Modules\Xot\Filament\Resources\XotBaseResource;
@@ -33,7 +28,6 @@ use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelati
 
 
 
->>>>>>> 07cc6b5c (.)
 class UserResource extends XotBaseResource
 {
     // protected static ?string $model = \Modules\Xot\Datas\XotData::make()->getUserClass();
@@ -76,8 +70,6 @@ class UserResource extends XotBaseResource
         ];
     }
 
-<<<<<<< HEAD
-=======
     /**
      * ---.
      */
@@ -89,7 +81,6 @@ class UserResource extends XotBaseResource
         ];
     }
 
->>>>>>> 07cc6b5c (.)
     // public static function enablePasswordUpdates(bool|Closure $condition = true): void
     // {
     //     static::$enablePasswordUpdates = $condition;

@@ -60,27 +60,12 @@ class Permission extends SpatiePermission
     protected $keyType = 'string';
 
     /** @var list<string> */
-<<<<<<< HEAD
-    public $fillable = [
-=======
     protected $fillable = [
->>>>>>> 07cc6b5c (.)
         'id',
         'name',
         'guard_name',
         'created_at',
         'updated_at',
-<<<<<<< HEAD
-        'updated_by',
-        'created_by'
-    ];
-
-    /** @return array<string, string> */
-    public function casts(): array
-    {
-        return [
-            'id' => 'string',
-=======
         'created_by',
         'updated_by',
     ];
@@ -91,18 +76,10 @@ class Permission extends SpatiePermission
         return [
             'id' => 'string',
             'uuid' => 'string',
->>>>>>> 07cc6b5c (.)
             'name' => 'string',
             'guard_name' => 'string',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
-<<<<<<< HEAD
-            'deleted_at' => 'datetime',
-            'updated_by' => 'string',
-            'created_by' => 'string',
-            'deleted_by' => 'string'
-=======
->>>>>>> 07cc6b5c (.)
         ];
     }
 

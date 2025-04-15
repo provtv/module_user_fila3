@@ -22,15 +22,6 @@ class GetCurrentDeviceAction
      */
     public function execute(?string $mobile_id = null): Device
     {
-<<<<<<< HEAD
-        $agent = new Agent;
-
-        $data = [
-            'device' => $agent->device(),
-            'platform' => $agent->platform(),
-            'browser' => $agent->browser(),
-            // 'version' => $agent->version($agent->browser()),
-=======
         $agent = new Agent();
 
         $device = $agent->device();
@@ -41,22 +32,11 @@ class GetCurrentDeviceAction
             'device' => is_string($device) ? $device : 'unknown',
             'platform' => is_string($platform) ? $platform : 'unknown',
             'browser' => is_string($browser) ? $browser : 'unknown',
->>>>>>> 07cc6b5c (.)
             'is_desktop' => $agent->isDesktop(),
             'is_mobile' => $agent->isMobile(),
             'is_tablet' => $agent->isTablet(),
             'is_phone' => $agent->isPhone(),
             'is_robot' => $agent->isRobot(),
-<<<<<<< HEAD
-            // 'robot' => $agent->robot(),
-        ];
-        $up = [
-            'version' => $agent->version(is_string($agent) ? $agent : (string) $agent->browser()),
-            'robot' => $agent->robot(),
-        ];
-        if ($mobile_id !== null) {
-            $device = Device::firstOrCreate(['mobile_id' => $mobile_id]);
-=======
         ];
 
         $up = [
@@ -73,19 +53,15 @@ class GetCurrentDeviceAction
             if ($device === null) {
                 throw new \RuntimeException('Impossibile creare o trovare il dispositivo');
             }
->>>>>>> 07cc6b5c (.)
             $device->update([...$data, ...$up]);
 
             return $device;
         }
 
         $device = Device::firstOrCreate($data);
-<<<<<<< HEAD
-=======
         if ($device === null) {
             throw new \RuntimeException('Impossibile creare o trovare il dispositivo');
         }
->>>>>>> 07cc6b5c (.)
         $device->update($up);
 
         return $device;

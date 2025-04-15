@@ -76,20 +76,7 @@ class Role extends SpatieRole
     /** @var string */
     protected $keyType = 'string';
 
-<<<<<<< HEAD
-    /** @var list<string> */
-    public $fillable = [
-        'id',
-        'name',
-        'guard_name',
-        'created_at',
-        'updated_at',
-        'updated_by',
-        'created_by'
-    ];
-=======
     // protected $fillable=['id','']
->>>>>>> 07cc6b5c (.)
 
     public function getTable(): string
     {
@@ -98,35 +85,16 @@ class Role extends SpatieRole
         return $table;
     }
 
-<<<<<<< HEAD
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    public function casts(): array
-    {
-        return [
-            'id' => 'string',
-=======
     /** @return array<string, string> */
     protected function casts(): array
     {
         return [
             'id' => 'string',
             'uuid' => 'string',
->>>>>>> 07cc6b5c (.)
             'name' => 'string',
             'guard_name' => 'string',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
-<<<<<<< HEAD
-            'deleted_at' => 'datetime',
-            'updated_by' => 'string',
-            'created_by' => 'string',
-            'deleted_by' => 'string'
-=======
->>>>>>> 07cc6b5c (.)
         ];
     }
 

@@ -47,40 +47,4 @@ namespace Modules\User\Models;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereUuid($value)
  * @mixin \Eloquent
  */
-<<<<<<< HEAD
-class Team extends BaseTeam
-{
-    /** @var list<string> */
-    public $fillable = [
-        'id',
-        'name',
-        'personal_team',
-        'created_at',
-        'updated_at',
-        'updated_by',
-        'created_by'
-    ];
-
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    public function casts(): array
-    {
-        return [
-            'id' => 'string',
-            'name' => 'string',
-            'personal_team' => 'bool',
-            'created_at' => 'datetime',
-            'updated_at' => 'datetime',
-            'deleted_at' => 'datetime',
-            'updated_by' => 'string',
-            'created_by' => 'string',
-            'deleted_by' => 'string'
-        ];
-    }
-}
-=======
 class Team extends BaseTeam {}
->>>>>>> 07cc6b5c (.)

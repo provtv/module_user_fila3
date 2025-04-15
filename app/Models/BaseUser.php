@@ -30,18 +30,6 @@ use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Models\Traits\RelationX;
 use Spatie\Permission\Traits\HasRoles;
-<<<<<<< HEAD
-use Modules\User\Models\Team;
-use Modules\User\Models\Role;
-use Modules\User\Models\AuthenticationLog;
-use Modules\User\Models\Device;
-use Modules\User\Models\SocialiteUser;
-
-/**
- * Modules\User\Models\BaseUser
- *
- * @property string $id
-=======
 
 /**
  * Modules\User\Models\User.
@@ -74,26 +62,18 @@ use Modules\User\Models\SocialiteUser;
  * @property string|null $facebook_id
  * @property Collection<int, SocialiteUser> $socialiteUsers
  * @property int|null $socialite_users_count
->>>>>>> 07cc6b5c (.)
  * @property string|null $name
  * @property string|null $first_name
  * @property string|null $last_name
  * @property string|null $email
  * @property string|null $password
-<<<<<<< HEAD
- * @property string|null $remember_token
-=======
  * @property string|null $lang
->>>>>>> 07cc6b5c (.)
  * @property string|null $current_team_id
  * @property bool|null $is_active
  * @property bool|null $is_otp
  * @property \DateTime|null $password_expires_at
  * @property \DateTime|null $email_verified_at
-<<<<<<< HEAD
-=======
  * @property string|null $remember_token
->>>>>>> 07cc6b5c (.)
  * @property \DateTime|null $created_at
  * @property \DateTime|null $updated_at
  * @property \DateTime|null $deleted_at
@@ -102,33 +82,6 @@ use Modules\User\Models\SocialiteUser;
  * @property string|null $deleted_by
  * @property string|null $profile_photo_path
  * @property \Illuminate\Database\Eloquent\Relations\Pivot|null $pivot
-<<<<<<< HEAD
- * @property-read Collection<int, Role> $roles
- * @property-read Collection<int, Team> $teams
- * @property-read Collection<int, Team> $ownedTeams
- * @property-read Team|null $currentTeam
- * @property-read Collection<int, Device> $devices
- * @property-read Collection<int, SocialiteUser> $socialiteUsers
- * @property-read Collection<int, AuthenticationLog> $authentications
- */
-abstract class BaseUser extends Authenticatable implements HasName, HasTenants, UserContract
-{
-    /* , HasAvatar, UserJetContract, ExportsPersonalData */
-    /* , HasTeamsContract */
-    use HasApiTokens;
-    use HasFactory;
-
-    // use TwoFactorAuthenticatable; //ArtMin96
-    // use CanExportPersonalData; //ArtMin96
-    use HasRoles;
-
-    // use HasProfilePhoto; //ArtMin96
-    // use HasTeams; //ArtMin96
-    use HasTeams;
-    use HasUuids;
-
-    // use Traits\HasProfilePhoto;
-=======
  *
  * @method static \Modules\User\Database\Factories\UserFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
@@ -170,7 +123,6 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
     use HasRoles;
     use HasTeams;
     use HasUuids;
->>>>>>> 07cc6b5c (.)
     use Notifiable;
     use RelationX;
     use Traits\HasAuthenticationLogTrait;
@@ -220,12 +172,8 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
         // 'profile_photo_url',
     ];
 
-<<<<<<< HEAD
-    protected $pivot;
-=======
     /** @var \Illuminate\Database\Eloquent\Relations\Pivot|null */
     public $pivot;
->>>>>>> 07cc6b5c (.)
 
     public function canAccessFilament(?Panel $panel = null): bool
     {
@@ -242,15 +190,6 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
     {
         /** @var string|null */
         $name = $this->getAttribute('name');
-<<<<<<< HEAD
-        
-        /** @var string|null */
-        $firstName = $this->getAttribute('first_name');
-        
-        /** @var string|null */
-        $lastName = $this->getAttribute('last_name');
-        
-=======
 
         /** @var string|null */
         $firstName = $this->getAttribute('first_name');
@@ -258,7 +197,6 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
         /** @var string|null */
         $lastName = $this->getAttribute('last_name');
 
->>>>>>> 07cc6b5c (.)
         return trim(sprintf(
             '%s %s %s',
             $name ?? '',
@@ -327,22 +265,9 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
         return $this->teams ?? new Collection();
     }
 
-<<<<<<< HEAD
-    public function treeSonsCount(): int
-    {
-        return $this->teams()->count();
-    }
-
-    public function user(): UserContract
-    {
-        return $this;
-    }
-
-=======
     /**
      * @return BelongsToMany<Device, static|$this>
      */
->>>>>>> 07cc6b5c (.)
     public function devices(): BelongsToMany
     {
         return $this
@@ -391,11 +316,7 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
 
     public function getFullNameAttribute(?string $value): ?string
     {
-<<<<<<< HEAD
-        return $value ?? $this->first_name.' '.$this->last_name;
-=======
         return $value ?? $this->first_name . ' ' . $this->last_name;
->>>>>>> 07cc6b5c (.)
     }
 
     public function getNameAttribute(?string $value): ?string
@@ -405,17 +326,10 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
         }
         $name = Str::of((string) $this->email)->before('@')->toString();
         $i = 1;
-<<<<<<< HEAD
-        $value = $name.'-'.$i;
-        while (self::firstWhere(['name' => $value]) !== null) {
-            $i++;
-            $value = $name.'-'.$i;
-=======
         $value = $name . '-' . $i;
         while (self::firstWhere(['name' => $value]) !== null) {
             $i++;
             $value = $name . '-' . $i;
->>>>>>> 07cc6b5c (.)
         }
         $this->update(['name' => $value]);
 
@@ -473,21 +387,6 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
         return true;
     }
 
-<<<<<<< HEAD
-    public function hasRole($role, ?string $guard = null): bool
-    {
-        return $this->roles()->where('name', $role)->exists();
-    }
-
-    public function teams(): BelongsToMany
-    {
-        return $this->belongsToMany(Team::class, 'team_user');
-    }
-
-    public function belongsToManyX(string $related, ?string $table = null, ?string $foreignPivotKey = null, ?string $relatedPivotKey = null, ?string $parentKey = null, ?string $relatedKey = null, ?string $relation = null): BelongsToMany
-    {
-        return parent::belongsToMany($related, $table, $foreignPivotKey, $relatedPivotKey, $parentKey, $relatedKey, $relation);
-=======
 
     /**
      * Get permissions for a specific team.
@@ -521,7 +420,6 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
     {
         /** @var array<int, string> */
         return $this->roles()->pluck('name')->filter()->values()->toArray();
->>>>>>> 07cc6b5c (.)
     }
 
     public function personalTeam(): ?Team
@@ -549,9 +447,6 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
 
     public function belongsToTeam(\Modules\User\Contracts\TeamContract $team): bool
     {
-<<<<<<< HEAD
-        return $this->teams()->where('team_id', $team->id)->exists();
-=======
         /** @var ?\Illuminate\Database\Eloquent\Model $found */
         $found = $this->teams()->get()->first(function ($t) use ($team) {
             // Accesso sicuro agli attributi
@@ -564,14 +459,10 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
         });
 
         return $found !== null;
->>>>>>> 07cc6b5c (.)
     }
 
     public function ownsTeam(\Modules\User\Contracts\TeamContract $team): bool
     {
-<<<<<<< HEAD
-        return $this->ownedTeams()->where('id', $team->id)->exists();
-=======
         /** @var ?\Illuminate\Database\Eloquent\Model $found */
         $found = $this->ownedTeams()->get()->first(function ($t) use ($team) {
             // Accesso sicuro agli attributi
@@ -582,7 +473,6 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
         });
 
         return $found !== null;
->>>>>>> 07cc6b5c (.)
     }
 
     public function teamRole(\Modules\User\Contracts\TeamContract $team): ?Role
@@ -595,14 +485,6 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
         return null;
     }
 
-<<<<<<< HEAD
-    public function teamPermissions(\Modules\User\Contracts\TeamContract $team): array
-    {
-        return $this->teamRole($team)->permissions->pluck('name')->toArray() ?? [];
-    }
-
-=======
->>>>>>> 07cc6b5c (.)
     public function hasTeamPermission(\Modules\User\Contracts\TeamContract $team, string $permission): bool
     {
         return $this->ownsTeam($team) || in_array($permission, $this->teamPermissions($team));
@@ -610,16 +492,12 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
 
     public function hasTeamRole(\Modules\User\Contracts\TeamContract $team, string $role): bool
     {
-<<<<<<< HEAD
-        return $this->ownsTeam($team) || $this->teamRole($team)->name === $role;
-=======
         if ($this->ownsTeam($team)) {
             return true;
         }
 
         $teamRole = $this->teamRole($team);
         return $teamRole !== null && isset($teamRole->name) && $teamRole->name === $role;
->>>>>>> 07cc6b5c (.)
     }
 
     public function canManageTeam(Team $team): bool
@@ -687,11 +565,6 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
         return $this->morphMany(\Modules\User\Models\Authentication::class, 'authenticatable');
     }
 
-<<<<<<< HEAD
-    public function getEmailForVerification(): string
-    {
-        return strval($this->email);
-=======
     /**
      * Check if the user has a specific role.
      *
@@ -748,6 +621,5 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
 
         /** @var array<int, string> */
         return $permissions->pluck('name')->values()->toArray();
->>>>>>> 07cc6b5c (.)
     }
 }

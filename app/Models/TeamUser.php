@@ -42,49 +42,5 @@ use Illuminate\Support\Carbon;
  */
 class TeamUser extends BasePivot
 {
-<<<<<<< HEAD
-    /** @var string */
     protected $connection = 'user';
-
-    /** @var list<string> */
-    public $fillable = [
-        'id',
-        'uuid',
-        'team_id',
-        'user_id',
-        'role',
-        'customer_id',
-        'created_at',
-        'updated_at',
-        'created_by',
-        'updated_by',
-        'deleted_at',
-        'deleted_by'
-    ];
-
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    public function casts(): array
-    {
-        return [
-            'id' => 'string',
-            'uuid' => 'string',
-            'team_id' => 'string',
-            'user_id' => 'string',
-            'role' => 'string',
-            'customer_id' => 'string',
-            'created_at' => 'datetime',
-            'updated_at' => 'datetime',
-            'deleted_at' => 'datetime',
-            'created_by' => 'string',
-            'updated_by' => 'string',
-            'deleted_by' => 'string'
-        ];
-    }
-=======
-    protected $connection = 'user';
->>>>>>> 07cc6b5c (.)
 }
