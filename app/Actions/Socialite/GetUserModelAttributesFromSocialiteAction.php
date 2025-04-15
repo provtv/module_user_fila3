@@ -24,11 +24,39 @@ class GetUserModelAttributesFromSocialiteAction
         private readonly string $provider,
         private readonly SocialiteUserContract $oauthUser,
     ) {
+<<<<<<< HEAD
         $nameFieldsResolver = app(UserNameFieldsResolver::class, ['user' => $this->oauthUser]);
         $this->name = $nameFieldsResolver->name;
         $this->first_name = $nameFieldsResolver->name;
         $this->last_name = $nameFieldsResolver->last_name;
         $this->email = is_string($this) ? $this : (string) $this->oauthUser->getEmail();
+=======
+        if (empty($provider)) {
+            throw new \InvalidArgumentException('Il provider non può essere vuoto');
+        }
+
+        $nameFieldsResolver = app(UserNameFieldsResolver::class, ['user' => $this->oauthUser]);
+        if ($nameFieldsResolver === null) {
+            throw new \RuntimeException('Impossibile istanziare UserNameFieldsResolver');
+        }
+
+        if (!is_string($nameFieldsResolver->name)) {
+            throw new \RuntimeException('Il nome deve essere una stringa');
+        }
+        if (!is_string($nameFieldsResolver->last_name)) {
+            throw new \RuntimeException('Il cognome deve essere una stringa');
+        }
+
+        $this->name = $nameFieldsResolver->name;
+        $this->first_name = $nameFieldsResolver->name;
+        $this->last_name = $nameFieldsResolver->last_name;
+
+        $email = $this->oauthUser->getEmail();
+        if (!is_string($email) || empty($email)) {
+            throw new \RuntimeException('L\'email deve essere una stringa non vuota');
+        }
+        $this->email = $email;
+>>>>>>> 07cc6b5c (.)
     }
 
     public function getProvider(): string

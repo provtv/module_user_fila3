@@ -51,6 +51,7 @@ class TeamInvitation extends BaseModel
     protected $connection = 'user';
 
     /** @var list<string> */
+<<<<<<< HEAD
     public $fillable = [
         'id',
         'team_id',
@@ -60,6 +61,11 @@ class TeamInvitation extends BaseModel
         'updated_at',
         'updated_by',
         'created_by'
+=======
+    protected $fillable = [
+        'email',
+        'role',
+>>>>>>> 07cc6b5c (.)
     ];
 
     /**
@@ -75,6 +81,7 @@ class TeamInvitation extends BaseModel
 
         return $this->belongsTo($team_class);
     }
+<<<<<<< HEAD
 
     /**
      * Get the attributes that should be cast.
@@ -96,4 +103,6 @@ class TeamInvitation extends BaseModel
             'deleted_by' => 'string'
         ];
     }
+=======
+>>>>>>> 07cc6b5c (.)
 }

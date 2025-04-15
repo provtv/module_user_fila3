@@ -25,6 +25,10 @@ use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
  * @property string|null $first_name
  * @property string|null $full_name
  * @property string|null $last_name
+<<<<<<< HEAD
+=======
+ * @property string|null $lang
+>>>>>>> 07cc6b5c (.)
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Modules\Media\Models\Media> $media
  * @property int|null $media_count
  * @property \Illuminate\Database\Eloquent\Collection<int, DeviceUser> $mobileDeviceUsers
@@ -101,6 +105,7 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
         return $this->extra->modelScope();
     }
 
+<<<<<<< HEAD
     public function getAvatarUrl(): string
     {
         // return filament()->getUserAvatarUrl($this);
@@ -111,11 +116,31 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
         }
 
         $email = trim(is_string($this) ? $this : (string) $this->email);
+=======
+    /**
+     * Ottiene l'URL dell'avatar dell'utente.
+     * 
+     * @return string L'URL dell'avatar
+     */
+    public function getAvatarUrl(): string
+    {
+        $avatar = $this->getFirstMediaUrl('avatar');
+        if ($avatar !== '') {
+            return $avatar;
+        }
+
+        // Corretto il controllo errato su $this
+        $email = trim((string) $this->email);
+>>>>>>> 07cc6b5c (.)
         // 'MyEmailAddress@example.com'
         $email = mb_strtolower($email);
         // 'myemailaddress@example.com'
         $hash = hash('sha256', $email);
+<<<<<<< HEAD
         $avatar = 'https://gravatar.com/avatar/'.$hash.'?s=64';
+=======
+        $avatar = 'https://gravatar.com/avatar/' . $hash . '?s=64';
+>>>>>>> 07cc6b5c (.)
 
         return $avatar;
 
@@ -130,6 +155,32 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
         // return $this->getFirstMediaUrl();
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Ottiene la lingua dell'utente.
+     * 
+     * @return string Il codice della lingua
+     */
+    public function getUserLang(): string
+    {
+        $locale = config('app.locale');
+        $defaultLocale = 'it';
+
+        if ($locale === null || !is_string($locale)) {
+            $locale = $defaultLocale;
+        }
+
+        $userLang = $this->lang;
+
+        if ($userLang === null || !is_string($userLang)) {
+            return $locale;
+        }
+
+        return $userLang;
+    }
+
+>>>>>>> 07cc6b5c (.)
     /** @return array<string, string> */
     protected function casts(): array
     {

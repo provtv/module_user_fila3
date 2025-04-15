@@ -46,6 +46,7 @@ namespace Modules\User\Models;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile withoutRole($roles, $guard = null)
  * @mixin \Eloquent
  */
+<<<<<<< HEAD
 class Profile extends BaseProfile
 {
     /** @var list<string> */
@@ -99,3 +100,6 @@ class Profile extends BaseProfile
         ];
     }
 }
+=======
+class Profile extends BaseProfile {}
+>>>>>>> 07cc6b5c (.)

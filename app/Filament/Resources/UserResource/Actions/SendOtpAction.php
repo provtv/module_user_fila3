@@ -7,6 +7,7 @@ namespace Modules\User\Filament\Resources\UserResource\Actions;
 use Filament\Tables\Actions\Action;
 use Modules\User\Actions\Otp\SendOtpByUserAction;
 use Modules\User\Models\User;
+<<<<<<< HEAD
 
 
 
@@ -17,6 +18,13 @@ use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelati
 
 
 
+=======
+use Modules\Xot\Contracts\UserContract;
+
+/**
+ * Azione Filament per l'invio di un OTP all'utente.
+ */
+>>>>>>> 07cc6b5c (.)
 class SendOtpAction extends Action
 {
     protected function setUp(): void
@@ -24,6 +32,7 @@ class SendOtpAction extends Action
         parent::setUp();
 
         $this
+<<<<<<< HEAD
             
             ->tooltip(trans('user::otp.actions.send_otp'))
             ->icon('heroicon-o-key')
@@ -32,6 +41,17 @@ class SendOtpAction extends Action
                     throw new \InvalidArgumentException('L\'utente deve implementare l\'interfaccia UserContract');
                 }
                 app(SendOtpByUserAction::class)->execute($record);
+=======
+            ->tooltip(trans('user::otp.actions.send_otp'))
+            ->icon('heroicon-o-key')
+            ->action(function (User $record) {
+                // Sappiamo già che l'utente implementa UserContract perché il tipo User lo implementa
+                $action = app(SendOtpByUserAction::class);
+                if ($action === null) {
+                    throw new \RuntimeException('Impossibile istanziare SendOtpByUserAction');
+                }
+                $action->execute($record);
+>>>>>>> 07cc6b5c (.)
             })
             ->requiresConfirmation()
             ->modalHeading(trans('user::otp.actions.send_otp'))

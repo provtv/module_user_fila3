@@ -7,18 +7,26 @@ namespace Modules\User\Models\Traits;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Modules\User\Contracts\TeamContract;
 use Modules\User\Models\Tenant;
+=======
+use Illuminate\Support\Collection;
+use Modules\User\Contracts\TeamContract;
+>>>>>>> 07cc6b5c (.)
 use Modules\Xot\Datas\XotData;
 
 // use Modules\User\Models\OwnerRole;
 
 /**
  * @property TeamContract $currentTeam
+<<<<<<< HEAD
  * @property-read Collection<int, Tenant> $tenants
  * @property-read Collection<int, Tenant> $ownedTenants
+=======
+>>>>>>> 07cc6b5c (.)
  */
 trait HasTenants
 {
@@ -44,6 +52,7 @@ trait HasTenants
      */
     public function tenants(): BelongsToMany
     {
+<<<<<<< HEAD
         /** @var class-string<Tenant> $tenantClass */
         $tenantClass = XotData::make()->getTenantClass();
         return $this->belongsToMany($tenantClass)
@@ -137,5 +146,14 @@ trait HasTenants
         if ($this->canManageTenant($tenant)) {
             $tenant->users()->detach($userId);
         }
+=======
+        $xot = XotData::make();
+        /** @var class-string<Model> */
+        $tenant_class = $xot->getTenantClass();
+
+        // $this->setConnection('mysql');
+        return $this->belongsToManyX($tenant_class, null, null, 'tenant_id');
+        // ->as('membership')
+>>>>>>> 07cc6b5c (.)
     }
 }

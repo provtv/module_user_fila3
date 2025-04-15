@@ -26,6 +26,10 @@ use Modules\User\Events\RegistrationNotEnabled;
 use Modules\User\Events\UserNotAllowed;
 use Modules\User\Exceptions\ProviderNotConfigured;
 use Modules\Xot\Datas\XotData;
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Facades\Auth;
+>>>>>>> 07cc6b5c (.)
 
 class ProcessCallbackController extends Controller
 {
@@ -56,7 +60,12 @@ class ProcessCallbackController extends Controller
         // Try to find a socialite user
         $socialiteUser = app(RetrieveSocialiteUserAction::class)->execute($provider, $oauthUser);
         if ($socialiteUser) {
+<<<<<<< HEAD
             if (! $socialiteUser->user->canAccessSocialite()) {
+=======
+            $socialiteUserObj = $socialiteUser->user;
+            if ($socialiteUserObj === null || !$socialiteUserObj->canAccessSocialite()) {
+>>>>>>> 07cc6b5c (.)
                 return app(RedirectToLoginAction::class)->execute('auth.user-not-allowed');
             }
             // Associate default roles to the existing "real" user, if needed
@@ -65,7 +74,11 @@ class ProcessCallbackController extends Controller
                 [
                     'provider' => $provider,
                 ]
+<<<<<<< HEAD
             )->execute($socialiteUser->user, $oauthUser);
+=======
+            )->execute($socialiteUserObj, $oauthUser);
+>>>>>>> 07cc6b5c (.)
 
             return app(LoginUserAction::class)->execute($socialiteUser);
         }
@@ -80,7 +93,11 @@ class ProcessCallbackController extends Controller
         $user_class = XotData::make()->getUserClass();
         // See if a user already exists, but not for this socialite provider
         // $user = app()->call($this->socialite->getUserResolver(), ['provider' => $provider, 'oauthUser' => $oauthUser, 'socialite' => $this->socialite]);
+<<<<<<< HEAD
         /** @var \Modules\Xot\Contracts\UserContract */
+=======
+        /** @var \Modules\Xot\Contracts\UserContract|null */
+>>>>>>> 07cc6b5c (.)
         $user = $user_class::query()->firstWhere(['email' => $oauthUser->getEmail()]);
 
         // Handle registration
@@ -90,10 +107,27 @@ class ProcessCallbackController extends Controller
             $socialiteUser = app(RegisterOauthUserAction::class)->execute($provider, $oauthUser);
         }
 
+<<<<<<< HEAD
         if (! $socialiteUser->user->canAccessSocialite()) {
             return app(RedirectToLoginAction::class)->execute('auth.user-not-allowed');
         }
 
+=======
+        $socialiteUserObj = $socialiteUser->user;
+        if ($socialiteUserObj === null || !$socialiteUserObj->canAccessSocialite()) {
+            return app(RedirectToLoginAction::class)->execute('auth.user-not-allowed');
+        }
+
+        // Verifichiamo prima se l'utente può accedere al socialite
+        /** @var \Modules\Xot\Contracts\UserContract|null $authUser */
+        $authUser = Auth::user();
+        if ($authUser !== null && method_exists($authUser, 'canAccessSocialite') && !$authUser->canAccessSocialite()) {
+            return redirect()->route(
+                optional(Auth::check()) ? 'filament.user.pages.dashboard' : 'filament.user.auth.login'
+            );
+        }
+
+>>>>>>> 07cc6b5c (.)
         return app(LoginUserAction::class)->execute($socialiteUser);
     }
 }

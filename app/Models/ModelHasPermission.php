@@ -38,6 +38,7 @@ use Modules\User\Database\Factories\ModelHasPermissionFactory;
  */
 class ModelHasPermission extends BaseMorphPivot
 {
+<<<<<<< HEAD
     /** @var list<string> */
     public $fillable = [
         'id',
@@ -72,4 +73,12 @@ class ModelHasPermission extends BaseMorphPivot
             'team_id' => 'string'
         ];
     }
+=======
+    /**
+     * @var list<string>
+     *
+     * @psalm-var list{'permission_id', 'model_type', 'model_id'}
+     */
+    protected $fillable = ['permission_id', 'model_type', 'model_id'];
+>>>>>>> 07cc6b5c (.)
 }

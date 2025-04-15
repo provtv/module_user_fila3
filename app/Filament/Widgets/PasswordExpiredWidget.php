@@ -26,6 +26,10 @@ use Modules\User\Http\Response\PasswordResetResponse;
 use Modules\User\Rules\CheckOtpExpiredRule;
 use Modules\Xot\Filament\Traits\TransTrait;
 use Webmozart\Assert\Assert;
+<<<<<<< HEAD
+=======
+use Filament\Facades\Filament;
+>>>>>>> 07cc6b5c (.)
 
 /**
  * @property ComponentContainer $form
@@ -167,7 +171,11 @@ class PasswordExpiredWidget extends Widget implements HasForms
         if (!$user instanceof \Modules\Xot\Contracts\UserContract) {
             throw new \InvalidArgumentException('L\'utente deve implementare l\'interfaccia UserContract');
         }
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 07cc6b5c (.)
         event(new NewPasswordSet($user));
 
         Notification::make()
@@ -180,11 +188,29 @@ class PasswordExpiredWidget extends Widget implements HasForms
 
     protected function getCurrentPasswordFormComponent(): Component
     {
+<<<<<<< HEAD
+=======
+        $authUser = Filament::auth()->user();
+
+        if ($authUser instanceof \Modules\User\Models\User) {
+            return TextInput::make('current_password')
+                ->password()
+                ->revealable()
+                ->required()
+                ->rule(new CheckOtpExpiredRule($authUser))
+                ->validationAttribute(static::trans('fields.current_password.validation_attribute'));
+        }
+
+        // Fallback nel caso l'utente non sia del tipo corretto
+>>>>>>> 07cc6b5c (.)
         return TextInput::make('current_password')
             ->password()
             ->revealable()
             ->required()
+<<<<<<< HEAD
             ->rule(new CheckOtpExpiredRule(auth()->user()))
+=======
+>>>>>>> 07cc6b5c (.)
             ->validationAttribute(static::trans('fields.current_password.validation_attribute'));
     }
 

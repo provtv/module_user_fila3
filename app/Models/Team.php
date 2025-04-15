@@ -47,6 +47,7 @@ namespace Modules\User\Models;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereUuid($value)
  * @mixin \Eloquent
  */
+<<<<<<< HEAD
 class Team extends BaseTeam
 {
     /** @var list<string> */
@@ -80,3 +81,6 @@ class Team extends BaseTeam
         ];
     }
 }
+=======
+class Team extends BaseTeam {}
+>>>>>>> 07cc6b5c (.)

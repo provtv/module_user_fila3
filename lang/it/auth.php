@@ -92,4 +92,65 @@ return [
     'Resend Verification Email' => 'Rinvia Email di Verifica',
     'Verify Your Email Address' => 'Verifica la tua email',
     'A fresh verification link has been sent to your email address.' => 'Un nuovo link di verifica è stato inviato al tuo indirizzo email.',
+<<<<<<< HEAD
+=======
+
+    'login' => [
+        'title' => 'Accedi al tuo account',
+        'subtitle' => 'Inserisci le tue credenziali per accedere',
+        'email' => 'Indirizzo email',
+        'email_placeholder' => 'esempio@email.com',
+        'password' => 'Password',
+        'password_placeholder' => '••••••••',
+        'remember' => 'Ricordami',
+        'submit' => 'Accedi',
+        'forgot_password' => 'Password dimenticata?',
+        'no_account' => 'Non hai un account?',
+        'register' => 'Registrati',
+    ],
+
+    'register' => [
+        'title' => 'Crea un nuovo account',
+        'subtitle' => 'Inserisci i tuoi dati per registrarti',
+        'name' => 'Nome completo',
+        'name_placeholder' => 'Mario Rossi',
+        'email' => 'Indirizzo email',
+        'email_placeholder' => 'esempio@email.com',
+        'password' => 'Password',
+        'password_placeholder' => '••••••••',
+        'password_confirmation' => 'Conferma password',
+        'password_confirmation_placeholder' => '••••••••',
+        'submit' => 'Registrati',
+        'already_registered' => 'Hai già un account? Accedi',
+    ],
+
+    'forgot-password' => [
+        'title' => 'Recupera la password',
+        'subtitle' => 'Inserisci la tua email per ricevere il link di reset',
+        'email' => 'Indirizzo email',
+        'email_placeholder' => 'esempio@email.com',
+        'submit' => 'Invia link di reset',
+        'back_to_login' => 'Torna al login',
+    ],
+
+    'reset-password' => [
+        'title' => 'Reimposta la password',
+        'subtitle' => 'Inserisci la nuova password',
+        'email' => 'Indirizzo email',
+        'email_placeholder' => 'esempio@email.com',
+        'password' => 'Nuova password',
+        'password_placeholder' => '••••••••',
+        'password_confirmation' => 'Conferma password',
+        'password_confirmation_placeholder' => '••••••••',
+        'submit' => 'Reimposta password',
+    ],
+
+    'passwords' => [
+        'reset' => 'La tua password è stata reimpostata!',
+        'sent' => 'Ti abbiamo inviato il link per reimpostare la password!',
+        'throttled' => 'Per favore attendi prima di riprovare.',
+        'token' => 'Il token di reset password non è valido.',
+        'user' => 'Non riusciamo a trovare un utente con questo indirizzo email.',
+    ],
+>>>>>>> 07cc6b5c (.)
 ];

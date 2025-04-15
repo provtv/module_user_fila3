@@ -42,6 +42,7 @@ use Illuminate\Support\Carbon;
  */
 class TeamUser extends BasePivot
 {
+<<<<<<< HEAD
     /** @var string */
     protected $connection = 'user';
 
@@ -83,4 +84,7 @@ class TeamUser extends BasePivot
             'deleted_by' => 'string'
         ];
     }
+=======
+    protected $connection = 'user';
+>>>>>>> 07cc6b5c (.)
 }

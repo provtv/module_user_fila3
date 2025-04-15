@@ -100,6 +100,7 @@ class User extends BaseUser
      */
     public $connection = 'user';
 
+<<<<<<< HEAD
     /** @var list<string> */
     public $fillable = [
         'id',
@@ -137,6 +138,8 @@ class User extends BaseUser
         ];
     }
 
+=======
+>>>>>>> 07cc6b5c (.)
     public function canAccessSocialite(): bool
     {
         // return $this->role_id === Role::ROLE_ADMINISTRATOR;
