@@ -24,7 +24,7 @@ use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Modules\Xot\Services\XotService;
 
-use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
+use Modules\Xot\Filament\Resources\XotBaseResource\RelationManagers\XotBaseRelationManager;
 
 class TenantResource extends XotBaseResource
 {
@@ -37,8 +37,11 @@ class TenantResource extends XotBaseResource
      */
     public static function getModel(): string
     {
-        $xot = app(XotService::class);
-        return $xot->getTenantClass();
+
+        $xot = XotData::make();
+        $res = $xot->getTenantClass();
+
+        return $res;
     }
 
     public static function getFormSchema(): array

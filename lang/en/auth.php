@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> af1243b (.)
+=======
+>>>>>>> dd498ab (.)
     'login' => [
         'title' => 'Sign in to your account',
         'subtitle' => 'Enter your credentials to access',
@@ -66,10 +69,13 @@ return [
     ],
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 3c26b81 (.)
 >>>>>>> af1243b (.)
+=======
+>>>>>>> dd498ab (.)
     'login-via' => 'Or log in via',
 
     'login-failed' => 'Login failed, please try again.',

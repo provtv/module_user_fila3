@@ -22,7 +22,7 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 
 
 
-use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
+use Modules\Xot\Filament\Resources\XotBaseResource\RelationManagers\XotBaseRelationManager;
 
 
 
@@ -70,16 +70,7 @@ class UserResource extends XotBaseResource
         ];
     }
 
-    /**
-     * ---.
-     */
-    public static function getRelations(): array
-    {
-        return [
-            'teams' => RelationManagers\TeamsRelationManager::class,
-            'tenants' => RelationManagers\TenantsRelationManager::class,
-        ];
-    }
+
 
     // public static function enablePasswordUpdates(bool|Closure $condition = true): void
     // {

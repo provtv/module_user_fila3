@@ -11,7 +11,7 @@ use Modules\User\Filament\Resources\TeamResource;
 
 
 
-use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
+use Modules\Xot\Filament\Resources\XotBaseResource\RelationManagers\XotBaseRelationManager;
 
 
 

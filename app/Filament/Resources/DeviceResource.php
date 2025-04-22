@@ -13,7 +13,7 @@ use Modules\User\Filament\Resources\DeviceResource\Pages\ListDevices;
 use Modules\User\Filament\Resources\DeviceResource\RelationManagers\UsersRelationManager;
 use Modules\User\Models\Device;
 use Modules\Xot\Filament\Resources\XotBaseResource;
-use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
+use Modules\Xot\Filament\Resources\XotBaseResource\RelationManagers\XotBaseRelationManager;
 
 class DeviceResource extends XotBaseResource
 {
@@ -66,5 +66,5 @@ class DeviceResource extends XotBaseResource
         ];
     }
 
-    
+
 }

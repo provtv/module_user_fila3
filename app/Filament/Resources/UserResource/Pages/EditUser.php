@@ -16,7 +16,7 @@ use Modules\User\Filament\Resources\UserResource;
 use Modules\User\Models\User;
 use Webmozart\Assert\Assert;
 
-use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
+use Modules\Xot\Filament\Resources\XotBaseResource\RelationManagers\XotBaseRelationManager;
 
 /**
  * Pagina per la modifica degli utenti con particolare gestione della password.
@@ -36,10 +36,10 @@ class EditUser extends EditRecord
         // Verifichiamo che record sia un'istanza valida di User
         Assert::notNull($this->record);
         Assert::isInstanceOf($this->record, User::class);
-        
+
         // Gestione sicura del tipo di password per evitare errori di cast
         $newPassword = $data['new_password'];
-        
+
         // Verifichiamo il tipo e convertiamo in modo sicuro
         if (!is_string($newPassword)) {
             if (!is_scalar($newPassword)) {
@@ -47,7 +47,7 @@ class EditUser extends EditRecord
             }
             $newPassword = (string) $newPassword;
         }
-            
+
         $this->record->update(['password' => Hash::make($newPassword)]);
         return $data;
     }

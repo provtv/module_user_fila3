@@ -16,7 +16,7 @@ use Modules\User\Filament\Resources\PermissionResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 use Webmozart\Assert\Assert;
 
-use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
+use Modules\Xot\Filament\Resources\XotBaseResource\RelationManagers\XotBaseRelationManager;
 
 class ListPermissions extends XotBaseListRecords
 {
@@ -92,7 +92,7 @@ class ListPermissions extends XotBaseListRecords
                         foreach ($collection as $record) {
                             // Verifichiamo che $record sia un'istanza di Model prima di procedere
                             Assert::isInstanceOf($record, \Illuminate\Database\Eloquent\Model::class, '['.__LINE__.']['.__CLASS__.']');
-                            
+
                             // Poi verifichiamo che il modello abbia il metodo roles() prima di chiamarlo
                             if (method_exists($record, 'roles')) {
                                 $record->roles()->sync($data['role']);

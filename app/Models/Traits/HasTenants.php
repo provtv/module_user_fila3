@@ -35,7 +35,7 @@ trait HasTenants
 
     /**
      * Get all of the tenants the user belongs to.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<\Illuminate\Database\Eloquent\Model>
      */
     public function tenants(): BelongsToMany
@@ -43,7 +43,6 @@ trait HasTenants
         $xot = XotData::make();
         /** @var class-string<Model> */
         $tenant_class = $xot->getTenantClass();
-
         // $this->setConnection('mysql');
         return $this->belongsToManyX($tenant_class, null, null, 'tenant_id');
         // ->as('membership')

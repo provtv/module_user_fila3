@@ -7,7 +7,7 @@ namespace Modules\User\Filament\Resources\TenantResource\RelationManagers;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Tables\Columns\TextColumn;
-use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
+use Modules\Xot\Filament\Resources\XotBaseResource\RelationManagers\XotBaseRelationManager;
 use Modules\Xot\Filament\Traits\HasXotTable;
 
 class UsersRelationManager extends XotBaseRelationManager

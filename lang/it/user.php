@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> af1243b (.)
@@ -124,6 +125,11 @@ return [
 =======
 =======
 <?php return array (
+=======
+<?php
+
+return array (
+>>>>>>> dd498ab (.)
   'navigation' => 
   array (
     'name' => 'Utenti',
@@ -226,6 +232,18 @@ return [
     array (
       'label' => 'applyFilters',
     ),
+    'toggleColumns' => 
+    array (
+      'label' => 'toggleColumns',
+    ),
+    'reorderRecords' => 
+    array (
+      'label' => 'reorderRecords',
+    ),
+    'resetFilters' => 
+    array (
+      'label' => 'resetFilters',
+    ),
   ),
   'actions' => 
   array (
@@ -266,6 +284,14 @@ return [
     'impersonate_users' => 'Impersona utenti',
     'manage_roles' => 'Gestisci ruoli',
   ),
+<<<<<<< HEAD
 );
 >>>>>>> 3c26b81 (.)
 >>>>>>> af1243b (.)
+=======
+  'model' => 
+  array (
+    'label' => 'user.model',
+  ),
+);
+>>>>>>> dd498ab (.)
