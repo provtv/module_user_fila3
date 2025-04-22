@@ -3,6 +3,10 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> af1243b (.)
     'login' => [
         'title' => 'Sign in to your account',
         'subtitle' => 'Enter your credentials to access',
@@ -61,6 +65,11 @@ return [
         'user' => 'We can\'t find a user with that email address.',
     ],
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3c26b81 (.)
+>>>>>>> af1243b (.)
     'login-via' => 'Or log in via',
 
     'login-failed' => 'Login failed, please try again.',

@@ -92,6 +92,10 @@ return [
     'Resend Verification Email' => 'Rinvia Email di Verifica',
     'Verify Your Email Address' => 'Verifica la tua email',
     'A fresh verification link has been sent to your email address.' => 'Un nuovo link di verifica è stato inviato al tuo indirizzo email.',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> af1243b (.)
 
     'login' => [
         'title' => 'Accedi al tuo account',
@@ -150,4 +154,9 @@ return [
         'token' => 'Il token di reset password non è valido.',
         'user' => 'Non riusciamo a trovare un utente con questo indirizzo email.',
     ],
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3c26b81 (.)
+>>>>>>> af1243b (.)
 ];

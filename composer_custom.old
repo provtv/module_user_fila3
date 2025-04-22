@@ -1,0 +1,81 @@
+#!/bin/sh
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+php -r "unlink('composer.lock');"
+rm composer.lock
+rm package-lock.json
+
+php -d memory_limit=-1 composer.phar require -W amenadiel/jpgraph
+php -d memory_limit=-1 composer.phar require -W artmin96/filament-jet
+php -d memory_limit=-1 composer.phar require -W bezhansalleh/filament-language-switch
+php -d memory_limit=-1 composer.phar require -W calebporzio/sushi
+php -d memory_limit=-1 composer.phar require -W cknow/laravel-money
+php -d memory_limit=-1 composer.phar require -W doctrine/dbal
+php -d memory_limit=-1 composer.phar require -W fidum/laravel-eloquent-morph-to-one
+php -d memory_limit=-1 composer.phar require -W filament/filament
+php -d memory_limit=-1 composer.phar require -W filament/spatie-laravel-media-library-plugin
+php -d memory_limit=-1 composer.phar require -W filament/spatie-laravel-settings-plugin
+php -d memory_limit=-1 composer.phar require -W filament/spatie-laravel-tags-plugin
+php -d memory_limit=-1 composer.phar require -W genealabs/laravel-model-caching
+php -d memory_limit=-1 composer.phar require -W guzzlehttp/guzzle
+php -d memory_limit=-1 composer.phar require -W intervention/image
+php -d memory_limit=-1 composer.phar require -W intervention/imagecache
+php -d memory_limit=-1 composer.phar require -W invaders-xx/filament-jsoneditor
+#php -d memory_limit=-1 composer.phar require -W konnco/filament-import
+php -d memory_limit=-1 composer.phar require -W laravel/framework
+php -d memory_limit=-1 composer.phar require -W laravel/jetstream
+php -d memory_limit=-1 composer.phar require -W laravel/passport
+php -d memory_limit=-1 composer.phar require -W laravel/sanctum
+php -d memory_limit=-1 composer.phar require -W laravel/socialite
+php -d memory_limit=-1 composer.phar require -W laravel/tinker
+php -d memory_limit=-1 composer.phar require -W laravel/ui
+php -d memory_limit=-1 composer.phar require -W leandrocfe/filament-apex-charts
+php -d memory_limit=-1 composer.phar require -W livewire/livewire
+php -d memory_limit=-1 composer.phar require -W maatwebsite/excel
+php -d memory_limit=-1 composer.phar require -W mhmiton/laravel-modules-livewire
+php -d memory_limit=-1 composer.phar require -W mohamedsabil83/filament-forms-tinyeditor
+php -d memory_limit=-1 composer.phar require -W nwidart/laravel-modules
+php -d memory_limit=-1 composer.phar require -W pbmedia/laravel-ffmpeg
+php -d memory_limit=-1 composer.phar require -W pxlrbt/filament-excel
+php -d memory_limit=-1 composer.phar require -W ralphjsmit/livewire-urls
+php -d memory_limit=-1 composer.phar require -W savannabits/filament-modules
+php -d memory_limit=-1 composer.phar require -W sevendays-digital/filament-nested-resources
+php -d memory_limit=-1 composer.phar require -W spatie/color
+php -d memory_limit=-1 composer.phar require -W spatie/eloquent-sortable
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-cookie-consent
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-data
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-database-mail-templates
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-medialibrary
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-model-info
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-model-states
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-model-status
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-permission
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-query-builder
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-queueable-action
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-sitemap
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-sluggable
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-tags
+php -d memory_limit=-1 composer.phar require -W spatie/laravel-translatable
+php -d memory_limit=-1 composer.phar require -W staudenmeir/eloquent-has-many-deep
+php -d memory_limit=-1 composer.phar require -W symfony/dom-crawler
+php -d memory_limit=-1 composer.phar require -W thecodingmachine/safe
+php -d memory_limit=-1 composer.phar require -W tightenco/ziggy
+php -d memory_limit=-1 composer.phar require -W weberhofer/jsonrpcphp
+
+
+
+#dev
+php -d memory_limit=-1 composer.phar require -W --dev barryvdh/laravel-debugbar
+php -d memory_limit=-1 composer.phar require -W --dev barryvdh/laravel-ide-helper
+php -d memory_limit=-1 composer.phar require -W --dev  fakerphp/faker
+php -d memory_limit=-1 composer.phar require -W --dev  laravel/pint
+php -d memory_limit=-1 composer.phar require -W --dev  laravel/sail
+php -d memory_limit=-1 composer.phar require -W --dev  mockery/mockery
+php -d memory_limit=-1 composer.phar require -W --dev  nunomaduro/collision
+php -d memory_limit=-1 composer.phar require -W --dev  larastan/larastan
+php -d memory_limit=-1 composer.phar require -W --dev  nunomaduro/phpinsights
+php -d memory_limit=-1 composer.phar require -W --dev  orchestra/testbench
+php -d memory_limit=-1 composer.phar require -W --dev  phpunit/phpunit
+php -d memory_limit=-1 composer.phar require -W --dev  spatie/laravel-ignition
+php -d memory_limit=-1 composer.phar require -W --dev  thecodingmachine/phpstan-safe-rule

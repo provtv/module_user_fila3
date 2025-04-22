@@ -1,0 +1,5 @@
+*:Zone.Identifier
+.php-cs-fixer.cache
+**/*.Zone.Identifier
+
+
