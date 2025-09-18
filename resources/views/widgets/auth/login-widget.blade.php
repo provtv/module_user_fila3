@@ -1,4 +1,3 @@
-<div>
     <form wire:submit="login">
         {{ $this->form }}
 

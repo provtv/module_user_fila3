@@ -22,6 +22,7 @@ class ListFeatures extends XotBaseListRecords
      */
     public function getTableColumns(): array
     {
+        /** @var array<string, \Filament\Tables\Columns\Column> */
         return [
             'name' => TextColumn::make('name')
                 ->searchable()

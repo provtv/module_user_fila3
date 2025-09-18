@@ -24,6 +24,7 @@ class ListUsers extends BaseListUsers
 
     public function getTableColumns(): array
     {
+        /** @var array<string, \Filament\Tables\Columns\Column> */
         return [
             //'id' => TextColumn::make('id'),
             'name' => TextColumn::make('name')

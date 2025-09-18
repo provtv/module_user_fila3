@@ -1,4 +1,4 @@
-@props([
+s([
     'background' => 'bg-blue-600',
     'color' => 'text-white'
 ])

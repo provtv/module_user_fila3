@@ -17,8 +17,7 @@ class MockUserWithTeams extends Model
 
     protected $fillable = ['name', 'email'];
 
-    public function getKey()
-    {
+    public function getKey(): void {
         return 1;
     }
 }

@@ -1,4 +1,4 @@
-<x-filament-panels::page>
+lament-panels::page>
 
     <x-filament-panels::form wire:submit="updateLogo">
         {{ $this->form }}

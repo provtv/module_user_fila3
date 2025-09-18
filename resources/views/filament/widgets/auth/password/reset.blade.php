@@ -1,4 +1,3 @@
-<div>
     @if($this->emailSent)
         {{-- Success State --}}
         <div class="text-center space-y-6">

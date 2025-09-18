@@ -1,4 +1,4 @@
-@props(['title', 'stats'])
+s(['title', 'stats'])
 
 <div class="py-16 bg-base-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

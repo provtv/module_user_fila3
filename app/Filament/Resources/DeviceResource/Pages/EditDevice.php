@@ -15,6 +15,7 @@ class EditDevice extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord
 
     protected function getHeaderActions(): array
     {
+        /** @var array<string, \Filament\Actions\Action> */
         return [
             DeleteAction::make(),
         ];

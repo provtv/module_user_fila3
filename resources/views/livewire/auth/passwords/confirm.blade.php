@@ -1,4 +1,4 @@
-@section('title', 'Confirm your password')
+ion('title', 'Confirm your password')
 
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">

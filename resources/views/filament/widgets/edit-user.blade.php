@@ -1,4 +1,4 @@
-<x-filament::section>
+lament::section>
     <x-slot name="heading">
         {{ __('user::widgets.edit_user.title') }}
     </x-slot>

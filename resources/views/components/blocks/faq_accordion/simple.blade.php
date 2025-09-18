@@ -1,4 +1,4 @@
-@props([
+s([
     'title' => 'Domande Frequenti',
     'description' => null,
     'questions' => []

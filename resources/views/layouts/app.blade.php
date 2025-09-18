@@ -1,4 +1,4 @@
-@extends('pub_theme::layouts.base')
+nds('pub_theme::layouts.base')
 
 @section('body')
     @yield('content')

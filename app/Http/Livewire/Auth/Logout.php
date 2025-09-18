@@ -29,8 +29,7 @@ class Logout extends Component
      * Esegui logout, invalidazione sessione e redirect.
      * @return \Illuminate\Http\RedirectResponse|null
      */
-    public function mount()
-    {
+    public function mount() {
         try {
             // Rate limit
             $this->rateLimit(5);

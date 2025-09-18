@@ -18,8 +18,5 @@ class RegistrationNotEnabled
      *
      * @return void
      */
-    public function __construct(
-        public string $provider,
-        public SocialiteUserContract $oauthUser,
-    ) {}
+    public function __construct(): void {}
 }

@@ -96,8 +96,7 @@ class ResetPasswordWidget extends XotBaseWidget
      *
      * @return \Illuminate\Http\RedirectResponse|void
      */
-    public function resetPassword()
-    {
+    public function resetPassword() {
         $data = $this->form->getState();
 
         $reset_data =Arr::only($data,['email','password','password_confirmation','token']);

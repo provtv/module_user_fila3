@@ -1,5 +1,3 @@
-<?php
-
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -25,14 +23,12 @@ new class extends Component
     public $password;
     public $passwordConfirmation;
 
-    public function mount($token)
-    {
+    public function mount(): void {
         $this->email = request()->query('email', '');
         $this->token = $token;
     }
 
-    public function resetPassword()
-    {
+    public function resetPassword(): void {
         $this->validate();
 
         $response = Password::broker()->reset(

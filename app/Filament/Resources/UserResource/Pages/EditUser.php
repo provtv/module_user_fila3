@@ -54,6 +54,7 @@ class EditUser extends EditRecord
 
     protected function getHeaderActions(): array
     {
+        /** @var array<string, \Filament\Actions\Action> */
         return [
             DeleteAction::make(),
         ];

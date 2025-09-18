@@ -18,7 +18,5 @@ class UserNotAllowed
      *
      * @return void
      */
-    public function __construct(
-        public SocialiteUserContract $oauthUser,
-    ) {}
+    public function __construct(): void {}
 }

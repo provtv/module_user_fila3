@@ -1,5 +1,3 @@
-<?php
-
 use function Laravel\Folio\name;
 use Livewire\Volt\Component;
 use Livewire\Attributes\Validate;
@@ -11,8 +9,7 @@ new class extends Component
     #[Validate('required|current_password')]
     public $password = '';
 
-    public function confirm()
-    {
+    public function confirm(): void {
         $this->validate();
 
         session()->put('auth.password_confirmed_at', time());

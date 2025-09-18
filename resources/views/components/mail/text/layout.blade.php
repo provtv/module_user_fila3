@@ -1,4 +1,4 @@
-{!! strip_tags($header ?? '') !!}
+trip_tags($header ?? '') !!}
 
 {!! strip_tags($slot) !!}
 @isset($subcopy)

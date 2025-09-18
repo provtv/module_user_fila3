@@ -23,6 +23,7 @@ class ListDevices extends XotBaseListRecords
      */
     public function getTableColumns(): array
     {
+        /** @var array<string, \Filament\Tables\Columns\Column> */
         return [
             'uuid' => TextColumn::make('uuid')
                 ->searchable()

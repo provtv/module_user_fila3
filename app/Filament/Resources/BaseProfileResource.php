@@ -24,6 +24,7 @@ abstract class BaseProfileResource extends XotBaseResource
 
     public static function getFormSchema(): array
     {
+        /** @var array<string, \Filament\Forms\Components\Component> */
         return [
             // Forms\Components\TextInput::make('user_id'),
             // Forms\Components\TextInput::make('user_id')->readonly(),

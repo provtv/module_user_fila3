@@ -25,8 +25,7 @@ class SendOtpByUserAction
 
     private PasswordData $passwordData;
 
-    public function __construct()
-    {
+    public function __construct() {
         // Initialize PasswordData instance, relying on dependency injection if required.
         $this->passwordData = PasswordData::make();
     }

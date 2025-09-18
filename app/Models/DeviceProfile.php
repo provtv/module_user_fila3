@@ -28,8 +28,7 @@ class DeviceProfile extends DeviceUser
      *
      * @param array<string, mixed> $attributes
      */
-    public function __construct(array $attributes = [])
-    {
+    public function __construct(): void {
         parent::__construct($attributes);
     }
 }

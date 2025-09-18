@@ -24,20 +24,7 @@ use Filament\Forms\Components\TextInput as FormsTextInput;
  */
 class PasswordData extends Data
 {
-    public function __construct(
-        public int $otp_expiration_minutes = 5,
-        public int $otp_length = 6,
-        public int $expires_in = 60,
-        public int $min = 8,
-        public bool $mixedCase = true,
-        public bool $letters = true,
-        public bool $numbers = true,
-        public bool $symbols = true,
-        public bool $uncompromised = true,
-        public int $compromisedThreshold = 0,
-        public ?string $failMessage = null,
-        private ?string $field_name = null,
-    ) {
+    public function __construct(): void {
     }
 
     private static ?self $instance = null;
@@ -189,6 +176,7 @@ class PasswordData extends Data
 
     public static function getFormSchema(): array
     {
+        /** @var array<string, \Filament\Forms\Components\Component> */
         return [
             'password' => FormsTextInput::make('password')
                 ->password()

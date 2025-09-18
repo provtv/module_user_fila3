@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+
+
 use Illuminate\Support\Collection;
 use Modules\User\Contracts\TeamContract;
 use Modules\User\Models\Role;

@@ -21,9 +21,7 @@ class SetDefaultRolesBySocialiteUserAction
 
     private readonly string $defaultUserGuard;
 
-    public function __construct(
-        private readonly string $provider,
-    ) {
+    public function __construct() {
         $this->domainAnalyzer = app(
             EmailDomainAnalyzer::class,
             [

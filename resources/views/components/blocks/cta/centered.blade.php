@@ -1,4 +1,4 @@
-@props([
+s([
     'title' => 'Titolo CTA',
     'description' => 'Descrizione della call to action',
     'cta_primary_text' => 'Call to Action',

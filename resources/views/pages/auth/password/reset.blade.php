@@ -1,5 +1,3 @@
-<?php
-
 use Illuminate\Support\Facades\Password;
 use function Laravel\Folio\name;
 use Livewire\Volt\Component;
@@ -10,12 +8,11 @@ name('password.request');
 new class extends Component
 {
     #[Validate('required|email')]
-    public $email = null;
+    public ?mixed $email = null;
 
     public $emailSentMessage = false;
 
-    public function sendResetPasswordLink()
-    {
+    public function sendResetPasswordLink(): void {
         $this->validate();
 
         $response = Password::broker()->sendResetLink(['email' => $this->email]);

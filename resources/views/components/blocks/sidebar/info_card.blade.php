@@ -1,4 +1,4 @@
-@props([
+s([
     'title' => 'Informazioni',
     'content' => null,
     'icon' => null,

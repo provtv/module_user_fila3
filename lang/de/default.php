@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+
+
 return [
     'login' => [
         'username_or_email' => 'Benutzername oder E-Mail',

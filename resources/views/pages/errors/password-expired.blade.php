@@ -1,4 +1,3 @@
-<?php
 use Livewire\Volt\Component;
 
 use function Laravel\Folio\{withTrashed, middleware, name, render};

@@ -1,4 +1,3 @@
-@auth
     <x-filament::dropdown>
         <x-slot name="trigger">
             <button class="flex items-center space-x-2">

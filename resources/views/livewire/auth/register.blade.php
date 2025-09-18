@@ -1,4 +1,4 @@
-@section('title', 'Create a new account')
+ion('title', 'Create a new account')
 
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">

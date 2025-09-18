@@ -23,8 +23,7 @@ final class UserNameFieldsResolver
 
     public readonly ?string $last_name;
 
-    public function __construct(User $user)
-    {
+    public function __construct(): void {
         $this->name = $this->resolveName($user);
         $this->first_name = $this->resolveName($user);
         $this->last_name = $this->resolveSurname($user);

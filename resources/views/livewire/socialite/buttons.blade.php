@@ -1,4 +1,3 @@
-<div>
     @if (count($providers))
         <div class="relative flex items-center justify-center text-center mb-">
             <div class="absolute border-t border-gray-200 w-full h-px"></div>

@@ -20,10 +20,7 @@ class GetUserModelAttributesFromSocialiteAction
 
     public readonly string $email;
 
-    public function __construct(
-        private readonly string $provider,
-        private readonly SocialiteUserContract $oauthUser,
-    ) {
+    public function __construct(): void {
         if (empty($provider)) {
             throw new \InvalidArgumentException('Il provider non può essere vuoto');
         }

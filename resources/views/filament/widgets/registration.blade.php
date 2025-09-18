@@ -1,4 +1,4 @@
-<x-filament::widget>
+lament::widget>
     <x-filament::section>
         <form wire:submit="register">
             {{ $this->form }}

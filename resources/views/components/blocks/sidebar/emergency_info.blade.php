@@ -1,4 +1,4 @@
-@props([
+s([
     'title' => 'Emergenza',
     'content' => null,
     'emergency_number' => '112',

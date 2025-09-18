@@ -138,6 +138,8 @@ storage/framework/views/
 test_users.json
 user_test_data.csv
 
+lang/lang/
+
 # ==============================================
 # END OF USER .GITIGNORE
 # ==============================================

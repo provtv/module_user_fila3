@@ -1,4 +1,4 @@
-@props([
+s([
     'level' => 'success',
 ])
 <x-mail::message>

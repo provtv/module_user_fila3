@@ -41,6 +41,7 @@ abstract class BaseUserResource extends XotBaseResource
 
     public static function getFormSchema(): array
     {
+        /** @var array<string, \Filament\Forms\Components\Component> */
         return [
             'section01' => Section::make([
                 'name' => TextInput::make('name')

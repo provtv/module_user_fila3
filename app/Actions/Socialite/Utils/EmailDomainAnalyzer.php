@@ -12,9 +12,7 @@ final class EmailDomainAnalyzer
 {
     private User $ssoUser;
 
-    public function __construct(
-        private readonly string $ssoProvider,
-    ) {
+    public function __construct() {
         if (empty($ssoProvider)) {
             throw new \InvalidArgumentException('Il provider SSO non può essere vuoto');
         }

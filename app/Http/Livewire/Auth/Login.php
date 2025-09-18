@@ -109,8 +109,7 @@ class Login extends Component implements HasForms
      *
      * @return RedirectResponse|void
      */
-    public function authenticate()
-    {
+    public function authenticate() {
         try {
             /** @var array{email: string, password: string, remember?: bool} $data */
             $data = $this->validate();

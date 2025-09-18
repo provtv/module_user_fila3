@@ -14,17 +14,14 @@ class Message extends Component
      *
      * @return void
      */
-    public function __construct(
-        // public string $message
-    ) {}
+    public function __construct(): void {}
 
     /**
      * Get the view / contents that represent the component.
      *
      * @return \Illuminate\Contracts\View\View|\Closure|string
      */
-    public function render()
-    {
+    public function render(): void {
         $metatag = MetatagData::make();
         $view = 'user::components.mail.html.message';
         $view_params = [

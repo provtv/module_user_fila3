@@ -1,4 +1,4 @@
-<x-filament::widget>
+lament::widget>
     <x-filament::card>
         {{-- Widget content --}}
         @php

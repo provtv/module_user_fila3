@@ -1,4 +1,4 @@
-@component('mail::message')
+onent('mail::message')
 {{ __('You have been invited to join the :team team!', ['team' => $invitation->team->name]) }}
 
 @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::registration()))

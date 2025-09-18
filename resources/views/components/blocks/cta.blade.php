@@ -1,4 +1,4 @@
-@props(['title', 'description', 'button-text', 'button-link'])
+s(['title', 'description', 'button-text', 'button-link'])
 
 <div class="py-16 bg-primary text-primary-content">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

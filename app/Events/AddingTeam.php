@@ -16,10 +16,5 @@ class AddingTeam
      *
      * @return void
      */
-    public function __construct(
-        /**
-         * The team owner.
-         */
-        public UserContract $owner,
-    ) {}
+    public function __construct(): void {}
 }

@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+
+
 return [
     'new_password' => [
         'label' => 'New Password',

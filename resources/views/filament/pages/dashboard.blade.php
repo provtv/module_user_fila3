@@ -1,3 +1,3 @@
-<x-filament::page>
+lament::page>
 
 </x-filament::page>

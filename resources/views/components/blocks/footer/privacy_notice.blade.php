@@ -1,4 +1,4 @@
-@props([
+s([
     'content' => 'I dati personali forniti saranno trattati nel rispetto della normativa sulla privacy.',
     'link_text' => 'Informativa sulla Privacy',
     'link_url' => '/privacy-policy'

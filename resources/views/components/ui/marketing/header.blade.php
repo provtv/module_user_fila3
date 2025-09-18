@@ -1,5 +1,4 @@
-
-<header class="w-full bg-gradient-to-r from-blue-900 to-blue-800 shadow-md">
+der class="w-full bg-gradient-to-r from-blue-900 to-blue-800 shadow-md">
     <div class="relative z-20 flex items-center justify-between w-full h-20 max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
         <!-- Logo e Menu Mobile -->
         <div x-data="{ mobileMenuOpen: false }" class="relative flex items-center md:space-x-4 text-white">

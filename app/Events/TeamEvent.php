@@ -20,10 +20,5 @@ abstract class TeamEvent
      *
      * @return void
      */
-    public function __construct(
-        /**
-         * The team instance.
-         */
-        public TeamContract $teamContract,
-    ) {}
+    public function __construct(): void {}
 }

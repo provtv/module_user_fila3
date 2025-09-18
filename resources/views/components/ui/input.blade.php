@@ -1,4 +1,4 @@
-@props([
+s([
     'label' => null,
     'id' => null,
     'name' => null,

@@ -1,4 +1,3 @@
-<div>
     @if ($text != null)
         <div>
             <x-filament::input.checkbox

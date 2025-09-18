@@ -14,6 +14,7 @@ class ListProfiles extends XotBaseListRecords
 
     public function getTableColumns(): array
     {
+        /** @var array<string, \Filament\Tables\Columns\Column> */
         return [
             'email' => TextColumn::make('email')
                 ->searchable()

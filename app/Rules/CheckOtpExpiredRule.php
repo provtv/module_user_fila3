@@ -16,8 +16,7 @@ class CheckOtpExpiredRule implements ValidationRule
 {
     private string $message = 'Il codice OTP è scaduto. Richiedi un nuovo codice.';
 
-    public function __construct(private User $user)
-    {
+    public function __construct(): void {
     }
 
     /**

@@ -1,4 +1,4 @@
-<x-filament-widgets::widget>
+lament-widgets::widget>
     <div class="text-center mb-4">
         <div class="flex justify-center">
             <x-filament::icon

@@ -17,14 +17,5 @@ class TeamMemberRemoved
      *
      * @return void
      */
-    public function __construct(
-        /**
-         * The team instance.
-         */
-        public TeamContract $teamContract,
-        /**
-         * The team member being added.
-         */
-        public UserContract $userContract,
-    ) {}
+    public function __construct(): void {}
 }

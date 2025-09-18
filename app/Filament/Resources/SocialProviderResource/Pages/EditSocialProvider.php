@@ -15,6 +15,7 @@ class EditSocialProvider extends \Modules\Xot\Filament\Resources\Pages\XotBaseEd
 
     protected function getHeaderActions(): array
     {
+        /** @var array<string, \Filament\Actions\Action> */
         return [
             Actions\ViewAction::make(),
             Actions\DeleteAction::make(),

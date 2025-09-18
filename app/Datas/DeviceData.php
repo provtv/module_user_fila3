@@ -103,7 +103,7 @@ class DeviceData extends Data
     }
 
     /*
-    public function getModel(){
+    public function getModel(): void {
         MobileDevice::firstOrCreate();
     }
     */

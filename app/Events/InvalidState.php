@@ -18,7 +18,5 @@ class InvalidState
      *
      * @return void
      */
-    public function __construct(
-        public InvalidStateException $exception,
-    ) {}
+    public function __construct(): void {}
 }

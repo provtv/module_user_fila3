@@ -1,4 +1,4 @@
-<x-layouts.app>
+youts.app>
     <div class="min-h-screen flex items-center justify-center">
         <div class="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow">
             <h2 class="text-2xl font-bold text-gray-900">{{ __('user::auth.logout_success') }}</h2>

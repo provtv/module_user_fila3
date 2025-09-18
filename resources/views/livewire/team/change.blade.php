@@ -1,4 +1,4 @@
-<x-filament::dropdown >
+lament::dropdown >
     <x-slot name="trigger" class="ml-4">
         <button @class([
             'flex flex-shrink-0 w-10 h-10 rounded-full bg-gray-200 items-center justify-center',

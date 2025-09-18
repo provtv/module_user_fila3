@@ -1,5 +1,3 @@
-<?php
-
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Auth;
 use function Laravel\Folio\{middleware, name};
@@ -10,8 +8,7 @@ name('verification.notice');
 
 new class extends Component
 {
-    public function resend()
-    {
+    public function resend(): void {
         $user = auth()->user();
         if ($user->hasVerifiedEmail()) {
             redirect('/');

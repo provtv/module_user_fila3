@@ -1,4 +1,3 @@
-<?php
 use Modules\Cms\Models\Page;
 use Illuminate\View\View;
 use function Laravel\Folio\render;

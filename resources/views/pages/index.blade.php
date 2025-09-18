@@ -1,5 +1,3 @@
-<?php
-
 use function Laravel\Folio\{middleware, name};
 use Filament\Notifications\Notification;
 use Filament\Notifications\Livewire\Notifications;

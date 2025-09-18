@@ -210,8 +210,7 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
     /** @var \Illuminate\Database\Eloquent\Relations\Pivot|null */
     public $pivot;
 
-    public function __construct(array $attributes = [])
-    {
+    public function __construct(): void {
         // Concateno i fillable del parent con quelli della classe corrente
         // array_values() garantisce che sia un array indicizzato (list<string>)
         try {
@@ -369,8 +368,7 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
      *
      * @return MorphMany<Notification, static|$this>
      */
-    public function notifications()
-    {
+    public function notifications(): void {
         // @phpstan-ignore return.type
         return $this->morphMany(Notification::class, 'notifiable');
     }

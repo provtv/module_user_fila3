@@ -29,6 +29,7 @@ abstract class BaseListUsers extends XotBaseListRecords
      */
     public function getTableColumns(): array
     {
+        /** @var array<string, \Filament\Tables\Columns\Column> */
         return [
             'name' => TextColumn::make('name')
                 ->searchable(),
@@ -44,6 +45,7 @@ abstract class BaseListUsers extends XotBaseListRecords
      */
     protected function getHeaderActions(): array
     {
+        /** @var array<string, \Filament\Actions\Action> */
         return [
            'export_xls' => ExportXlsAction::make('export_xls'),
         ];

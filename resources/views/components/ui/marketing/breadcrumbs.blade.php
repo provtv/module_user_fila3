@@ -1,4 +1,4 @@
-@props([
+s([
     'crumbs' => [], 
     'page' => 'About'
 ])

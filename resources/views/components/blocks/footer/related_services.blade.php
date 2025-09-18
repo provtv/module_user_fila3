@@ -1,4 +1,4 @@
-@props([
+s([
     'title' => 'Servizi correlati',
     'services' => []
 ])

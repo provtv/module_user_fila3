@@ -22,8 +22,7 @@ class FailedLoginListener
     /**
      * @param Request $request
      */
-    public function __construct(Request $request)
-    {
+    public function __construct(): void {
         $this->request = $request;
     }
 

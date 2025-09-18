@@ -32,6 +32,7 @@ class RecentLoginsWidget extends BaseWidget
      */
     public function getTableColumns(): array
     {
+        /** @var array<string, \Filament\Tables\Columns\Column> */
         return [
             \Filament\Tables\Columns\TextColumn::make('user'),
             \Filament\Tables\Columns\TextColumn::make('login_at'),

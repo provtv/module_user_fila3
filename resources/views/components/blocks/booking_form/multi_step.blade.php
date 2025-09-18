@@ -1,4 +1,4 @@
-@props([
+s([
     'title' => 'Prenota un appuntamento',
     'id' => 'booking-form',
     'form_intro' => 'Compila il form per prenotare',

@@ -1,5 +1,3 @@
-<?php
-
 use App\Models\User;
 use Illuminate\Auth\Events\Login;
 use function Laravel\Folio\{middleware, name};
@@ -19,8 +17,7 @@ new class extends Component
 
     public $remember = false;
 
-    public function authenticate()
-    {
+    public function authenticate(): void {
         $this->validate();
 
         if (!Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {

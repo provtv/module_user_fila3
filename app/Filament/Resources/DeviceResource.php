@@ -21,6 +21,7 @@ class DeviceResource extends XotBaseResource
 
     public static function getFormSchema(): array
     {
+        /** @var array<string, \Filament\Forms\Components\Component> */
         return [
             'uuid' => TextInput::make('uuid')
                 ->label(__('user::device.fields.uuid.label'))

@@ -22,6 +22,7 @@ class FeatureResource extends XotBaseResource
 
     public static function getFormSchema(): array
     {
+        /** @var array<string, \Filament\Forms\Components\Component> */
         return [
             'name' => TextInput::make('name')
                 ->required()

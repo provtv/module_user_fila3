@@ -1,4 +1,4 @@
-@props([
+s([
     'title' => 'Contattaci',
     'description' => null,
     'phone' => null,

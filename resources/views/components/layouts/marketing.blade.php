@@ -1,4 +1,4 @@
-<x-layouts.main>
+youts.main>
     
     <x-ui.marketing.header />
     

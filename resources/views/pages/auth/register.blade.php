@@ -1,5 +1,3 @@
-<?php
-
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -32,8 +30,7 @@ new class extends Component
     #[Validate('required|min:8|same:password')]
     public $passwordConfirmation = '';
 
-    public function register()
-    {
+    public function register(): void {
         $this->validate();
 
         $user = User::create([

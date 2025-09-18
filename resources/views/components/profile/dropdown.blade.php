@@ -1,4 +1,4 @@
-@props([
+s([
     'alignment' => 'right',
     'width' => '48',
     'contentClasses' => 'py-1 bg-white dark:bg-gray-700',

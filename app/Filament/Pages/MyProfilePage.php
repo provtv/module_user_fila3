@@ -234,8 +234,7 @@ class MyProfilePage extends Page implements HasForms
     }
 
     /*
-    public function update()
-    {
+    public function update(): void {
         auth()->user()->update(
             $this->form->getState()
         );

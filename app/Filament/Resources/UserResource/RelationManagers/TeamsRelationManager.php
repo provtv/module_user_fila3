@@ -59,6 +59,7 @@ class TeamsRelationManager extends RelationManager
 
     public function getTableColumns(): array
     {
+        /** @var array<string, \Filament\Tables\Columns\Column> */
         return [
             TextColumn::make('name')
                 ->searchable()

@@ -27,6 +27,7 @@ class ListProfiles extends XotBaseListRecords
      */
     public function getTableColumns(): array
     {
+        /** @var array<string, \Filament\Tables\Columns\Column> */
         return [
             'user.name' => TextColumn::make('user.name')
                 ->sortable()

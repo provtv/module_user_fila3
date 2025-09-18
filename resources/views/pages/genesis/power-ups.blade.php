@@ -1,4 +1,4 @@
-<x-layouts.marketing>
+youts.marketing>
 
     @volt('genesis-powerups')
     <div class="w-full ">

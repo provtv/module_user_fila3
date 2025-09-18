@@ -1,4 +1,4 @@
-<div class="relative w-auto h-auto">
+class="relative w-auto h-auto">
     <div 
         x-data="{ 
             title: 'Default Toast Notification', 

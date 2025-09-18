@@ -1,4 +1,3 @@
-<div>
     <x-filament::modal>
         <x-slot name="title">
             {{ __('users.overview.title') }}

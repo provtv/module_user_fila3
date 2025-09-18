@@ -1,4 +1,3 @@
-<div>
     <form wire:submit="login" class="space-y-6">
         <!-- Email -->
         <div>

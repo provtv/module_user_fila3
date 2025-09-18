@@ -20,8 +20,7 @@ class FetchUserApiTokenCommand extends Command
 
     protected $description = 'Fetches an OAuth Token to be able to test APIs';
 
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
     }
 

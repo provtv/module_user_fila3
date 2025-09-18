@@ -1,4 +1,3 @@
-{{--
     View: user::filament.widgets.login
     Scopo: Widget di login Filament conforme a Windsurf/Xot
     Modifica liberamente questa struttura per UX custom

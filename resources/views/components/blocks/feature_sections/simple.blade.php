@@ -1,4 +1,4 @@
-@props([
+s([
     'title' => 'Titolo Feature',
     'description' => null,
     'sections' => []

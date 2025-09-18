@@ -1,4 +1,4 @@
-@props([
+s([
     'url',
     'color' => 'primary',
     'align' => 'center',

@@ -16,18 +16,5 @@ class InvitingTeamMember
      *
      * @return void
      */
-    public function __construct(
-        /**
-         * The team instance.
-         */
-        public TeamContract $teamContract,
-        /**
-         * The team member being added.
-         */
-        public string $email,
-        /**
-         * The role of the invitee.
-         */
-        public string $role,
-    ) {}
+    public function __construct(): void {}
 }

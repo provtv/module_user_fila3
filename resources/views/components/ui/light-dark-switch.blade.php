@@ -1,4 +1,4 @@
-<button 
+on 
     x-data="{
         darkMode: $persist(false).as('dark_mode'),
         toggleDarkMode(){

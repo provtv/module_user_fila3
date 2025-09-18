@@ -1,5 +1,3 @@
-<?php
-
 use function Laravel\Folio\{middleware, name};
 use Livewire\Volt\Component;
 

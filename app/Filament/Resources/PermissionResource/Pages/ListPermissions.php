@@ -27,6 +27,7 @@ class ListPermissions extends XotBaseListRecords
      */
     public function getTableColumns(): array
     {
+        /** @var array<string, \Filament\Tables\Columns\Column> */
         return [
             'name' => TextColumn::make('name')
                 ->searchable()
@@ -75,6 +76,7 @@ class ListPermissions extends XotBaseListRecords
      */
     protected function getHeaderActions(): array
     {
+        /** @var array<string, \Filament\Actions\Action> */
         return [
             'create' => CreateAction::make(),
         ];

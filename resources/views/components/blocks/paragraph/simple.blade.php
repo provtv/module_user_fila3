@@ -1,4 +1,4 @@
-@props([
+s([
     'content' => 'Contenuto del paragrafo'
 ])
 

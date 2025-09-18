@@ -1,4 +1,4 @@
-@props([
+s([
     'name',
     'title' => 'Slide-over Title',
     'open' => false,

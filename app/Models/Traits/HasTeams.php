@@ -41,8 +41,7 @@ trait HasTeams
      * @param  \Illuminate\Database\Eloquent\Model|null  $role
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function addTeamMember($user, $role = null)
-    {
+    public function addTeamMember(): void {
         $teamUser = $this->teamUsers()->create([
             'user_id' => $user->getKey(),
             'role_id' => $role ? $role->getKey() : null,
@@ -323,8 +322,7 @@ trait HasTeams
      * @param  \Illuminate\Database\Eloquent\Model  $user
      * @return void
      */
-    public function removeTeamMember($user)
-    {
+    public function removeTeamMember(): void {
         $this->teamUsers()
             ->where('user_id', $user->getKey())
             ->delete();

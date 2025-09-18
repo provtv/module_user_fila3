@@ -1,4 +1,4 @@
-<x-filament-widgets::widget>
+lament-widgets::widget>
     <x-filament::section>
         <div class="space-y-6">
             @if (session('error'))

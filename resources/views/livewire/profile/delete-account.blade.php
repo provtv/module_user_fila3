@@ -1,4 +1,3 @@
-<div>
     <x-filament::section>
         <x-slot name="heading">
             {{ __('user::profile.delete_account.title') }}

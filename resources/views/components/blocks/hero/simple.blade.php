@@ -1,4 +1,4 @@
-@props([
+s([
     'title' => 'Titolo Hero',
     'subtitle' => 'Sottotitolo della hero section',
     'image' => null,

@@ -1,4 +1,4 @@
-@props([
+s([
     'type' => 'primary', 
     'size' => 'md', 
     'tag' => 'button',
