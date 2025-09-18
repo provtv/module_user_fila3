@@ -29,8 +29,11 @@ class AssignTenantCommand extends Command
 
     /**
      * Create a new command instance.
+<<<<<<< HEAD
      *
      * @return void
+=======
+>>>>>>> 64fb2fa (.)
      */
     public function __construct() {
         parent::__construct();

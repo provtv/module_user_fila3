@@ -94,26 +94,43 @@ class ResetPasswordWidget extends XotBaseWidget
      * Implements Laravel's password reset functionality with explicit
      * type casting for security and proper error feedback.
      *
+<<<<<<< HEAD
      * @return \Illuminate\Http\RedirectResponse|void
+=======
+     * @return void
+>>>>>>> 64fb2fa (.)
      */
     public function resetPassword() {
         $data = $this->form->getState();
 
+<<<<<<< HEAD
         $reset_data =Arr::only($data,['email','password','password_confirmation','token']);
         $status = Password::reset( $reset_data,
             function ($user, $password): void {
                 $user->forceFill([
                     'password' => Hash::make($password),
                     'remember_token' => Str::random(60),
+=======
+        $reset_data = Arr::only($data, ['email', 'password', 'password_confirmation', 'token']);
+        $status = Password::reset($reset_data,
+            function ($user, $password) {
+                $user->forceFill([
+                    'password' => Hash::make($password),
+>>>>>>> 64fb2fa (.)
                 ])->save();
             }
         );
 
         if ($status === Password::PASSWORD_RESET) {
             session()->flash('status', __($status));
+<<<<<<< HEAD
             return redirect()->route('login');
         } else {
             /** @phpstan-ignore-next-line */
+=======
+            $this->redirect(route('filament.auth.login'));
+        } else {
+>>>>>>> 64fb2fa (.)
             $this->addError('email', __($status));
         }
     }

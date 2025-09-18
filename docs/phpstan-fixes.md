@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Correzioni PHPStan Livello 7 - Modulo User
 
 Questo documento traccia gli errori PHPStan di livello 7 identificati nel modulo User e le relative soluzioni implementate.
@@ -234,3 +235,200 @@ After applying fixes:
 - Safe functions provide exception-throwing alternatives to standard PHP functions
 - All Filament components should extend XotBase classes for consistency
 - Type system improvements enhance code reliability and maintainability 
+=======
+# PHPStan Fixes - User Module
+
+## Errori Risolti
+
+### 1. Reset Password Method Return Type Error
+**File**: `app/Filament/Widgets/Auth/ResetPasswordWidget.php`
+**Errore**: `A void method must not return a value`
+**Causa**: Il metodo `resetPassword()` era dichiarato come `void` ma restituiva un redirect quando il reset aveva successo
+**Soluzione**: Cambiato il tipo di ritorno da `void` a `?\Illuminate\Http\RedirectResponse`
+
+```php
+// PRIMA (ERRATO)
+/**
+ * @return \Illuminate\Http\RedirectResponse|void
+ */
+public function resetPassword(): void {
+    // ... logica di reset
+    if ($status === Password::PASSWORD_RESET) {
+        session()->flash('status', __($status));
+        return redirect()->route('login');  // ERRORE: void method non può restituire valori
+    } else {
+        $this->addError('email', __($status));
+    }
+}
+
+// DOPO (CORRETTO)
+/**
+ * @return \Illuminate\Http\RedirectResponse|null
+ */
+public function resetPassword(): ?\Illuminate\Http\RedirectResponse {
+    // ... logica di reset
+    if ($status === Password::PASSWORD_RESET) {
+        session()->flash('status', __($status));
+        return redirect()->route('login');  // OK: nullable type può restituire redirect
+    } else {
+        $this->addError('email', __($status));
+    }
+    
+    return null;  // OK: nullable type può restituire null
+}
+```
+
+**Motivazione**: Il metodo `resetPassword()` può restituire un redirect quando il reset della password ha successo, oppure non restituire nulla quando ci sono errori (gestiti tramite `addError`).
+
+**Business Logic**: Questo widget Filament gestisce il reset delle password degli utenti, utilizzando il sistema di reset password di Laravel. Quando il reset ha successo, reindirizza l'utente alla pagina di login con un messaggio di conferma.
+
+### 2. Login Authentication Method Return Type Error
+**File**: `app/Http/Livewire/Auth/Login.php`
+**Errore**: `A void method must not return a value`
+**Causa**: Il metodo `authenticate()` era dichiarato come `void` ma restituiva un redirect quando l'autenticazione aveva successo
+**Soluzione**: Cambiato il tipo di ritorno da `void` a `?\Illuminate\Http\RedirectResponse`
+
+```php
+// PRIMA (ERRATO)
+/**
+ * @return RedirectResponse|void
+ */
+public function authenticate(): void {
+    // ... logica di autenticazione
+    if (Auth::attempt($data, $remember)) {
+        session()->regenerate();
+        return $this->getRedirectUrl();  // ERRORE: void method non può restituire valori
+    }
+    // ... gestione errori
+}
+
+// DOPO (CORRETTO)
+/**
+ * @return RedirectResponse|null
+ */
+public function authenticate(): ?\Illuminate\Http\RedirectResponse {
+    // ... logica di autenticazione
+    if (Auth::attempt($data, $remember)) {
+        session()->regenerate();
+        return $this->getRedirectUrl();  // OK: nullable type può restituire redirect
+    }
+    // ... gestione errori
+    return null;  // OK: nullable type può restituire null
+}
+```
+
+**Motivazione**: Il metodo `authenticate()` può restituire un redirect quando l'autenticazione ha successo, oppure non restituire nulla quando ci sono errori (gestiti tramite `addError`).
+
+**Business Logic**: Questo componente Livewire gestisce l'autenticazione degli utenti con redirect intelligente basato sui ruoli dell'utente. Quando l'autenticazione ha successo, reindirizza l'utente all'URL appropriato per il suo ruolo.
+
+### 3. Console Command Constructor Return Type Error
+**File**: `app/Console/Commands/AssignTeamCommand.php`
+**Errore**: `Method Modules\User\Console\Commands\AssignTeamCommand::__construct() cannot declare a return type`
+**Causa**: Il costruttore era dichiarato con un tipo di ritorno `void` nel PHPDoc
+**Soluzione**: Rimosso il tipo di ritorno `void` dal PHPDoc del costruttore
+
+```php
+// PRIMA (ERRATO)
+/**
+ * Create a new command instance.
+ *
+ * @return void
+ */
+public function __construct() {
+    parent::__construct();
+}
+
+// DOPO (CORRETTO)
+/**
+ * Create a new command instance.
+ */
+public function __construct() {
+    parent::__construct();
+}
+```
+
+**Motivazione**: In PHP, i costruttori non possono dichiarare un tipo di ritorno esplicito. Il tipo di ritorno è sempre implicito e non può essere specificato.
+
+        **Business Logic**: Questo comando Artisan gestisce l'assegnazione di team agli utenti nel sistema. È parte del sistema di gestione utenti e team del framework Laraxot.
+
+        ### 4. Console Command Constructor Return Type Error (Tenant)
+        **File**: `app/Console/Commands/AssignTenantCommand.php`
+        **Errore**: `Method Modules\User\Console\Commands\AssignTenantCommand::__construct() cannot declare a return type`
+        **Causa**: Il costruttore era dichiarato con un tipo di ritorno `void` nel PHPDoc
+        **Soluzione**: Rimosso il tipo di ritorno `void` dal PHPDoc del costruttore
+
+        ```php
+        // PRIMA (ERRATO)
+        /**
+         * Create a new command instance.
+         *
+         * @return void
+         */
+        public function __construct() {
+            parent::__construct();
+        }
+
+        // DOPO (CORRETTO)
+        /**
+         * Create a new command instance.
+         */
+        public function __construct() {
+            parent::__construct();
+        }
+        ```
+
+        **Motivazione**: In PHP, i costruttori non possono dichiarare un tipo di ritorno esplicito. Il tipo di ritorno è sempre implicito e non può essere specificato.
+
+        **Business Logic**: Questo comando Artisan gestisce l'assegnazione di tenant agli utenti nel sistema. È parte del sistema multi-tenancy del framework Laraxot.
+
+        ### 5. Git Conflict Resolution Error
+        **File**: `app/Console/Commands/AssignRoleCommand.php`
+        **Errore**: `Syntax error, unexpected T_SL on line 35`
+        **Causa**: Conflitto Git non risolto con marker di conflitto (`<<<<<<<`, `=======`, `>>>>>>>`)
+        **Soluzione**: Risolto il conflitto Git mantenendo la sintassi standard per il costruttore
+
+        ```php
+        // PRIMA (ERRATO - Conflitto Git)
+        /**
+         * Create a new command instance.
+         */
+        <<<<<<< HEAD
+        public function __construct() {
+        =======
+        public function __construct()
+        {
+        >>>>>>> 40e74a85 (.)
+            parent::__construct();
+        }
+
+        // DOPO (CORRETTO)
+        /**
+         * Create a new command instance.
+         */
+        public function __construct()
+        {
+            parent::__construct();
+        }
+        ```
+
+        **Motivazione**: I marker di conflitto Git devono essere risolti prima che il codice possa essere analizzato correttamente da PHPStan.
+
+        **Business Logic**: Questo comando Artisan gestisce l'assegnazione di ruoli agli utenti nel sistema. È parte del sistema di gestione ruoli e permessi del framework Laraxot.
+
+        ## Pattern Identificati
+
+        ### Filament Widget Methods
+        - I metodi dei widget Filament possono restituire diversi tipi a seconda del contesto
+- Utilizzare union types (`TypeA|TypeB`) quando un metodo può restituire tipi diversi
+- Gestire correttamente i casi di successo e errore
+
+### Password Reset Flow
+- Utilizzare il sistema Password di Laravel per il reset
+- Gestire i messaggi di stato tramite session flash
+- Reindirizzare solo in caso di successo, gestire errori tramite `addError`
+
+## Collegamenti
+- [README.md](./README.md)
+- [Authentication Documentation](./authentication.md)
+- [Filament Best Practices](./filament-best-practices.md)
+>>>>>>> 64fb2fa (.)

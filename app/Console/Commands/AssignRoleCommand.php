@@ -17,6 +17,7 @@ class AssignRoleCommand extends Command
 {
     /**
      * The name and signature of the console command.
+<<<<<<< HEAD
      *
      * @var string
      */
@@ -35,21 +36,49 @@ class AssignRoleCommand extends Command
      * @return void
      */
     public function __construct() {
+=======
+     */
+    protected string $name = 'user:assign-role';
+
+    /**
+     * The console command description.
+     */
+    protected string $description = 'Assign a module to user';
+
+    /**
+     * Create a new command instance.
+     */
+    public function __construct()
+    {
+>>>>>>> 64fb2fa (.)
         parent::__construct();
     }
 
     /**
      * Execute the console command.
+<<<<<<< HEAD
+=======
+     * 
+     * @return void
+>>>>>>> 64fb2fa (.)
      */
     public function handle(): void
     {
         $email = text('email ?');
         $user_class = XotData::make()->getUserClass();
+<<<<<<< HEAD
         /** @var UserContract */
         $user = XotData::make()->getUserByEmail($email);
         /**
          * @var array<string, string>
          */
+=======
+        
+        /** @var UserContract $user */
+        $user = XotData::make()->getUserByEmail($email);
+        
+        /** @var array<string, string> $opts */
+>>>>>>> 64fb2fa (.)
         $opts = Role::all()
             ->pluck('name', 'name')
             ->toArray();
@@ -59,11 +88,14 @@ class AssignRoleCommand extends Command
             options: $opts,
             required: true,
             scroll: 10,
+<<<<<<< HEAD
             // validate: function (array $values) {
             //  return ! \in_array(\count($values), [1, 2], false)
             //    ? 'A maximum of two'
             //  : null;
             // }
+=======
+>>>>>>> 64fb2fa (.)
         );
 
         foreach ($rows as $row) {
@@ -76,6 +108,11 @@ class AssignRoleCommand extends Command
 
     /**
      * Get the console command options.
+<<<<<<< HEAD
+=======
+     * 
+     * @return array<array<string, mixed>>
+>>>>>>> 64fb2fa (.)
      */
     protected function getOptions(): array
     {

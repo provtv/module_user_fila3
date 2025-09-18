@@ -345,6 +345,10 @@ Schema::table('teams', function (Blueprint $table) {
 - [🚨 PHPStan Critical Rules](../Xot/docs/phpstan-critical-rules.md) - **🚨 CRITICO** - phpstan.neon INTOCCABILE
 - [PHPStan Array Types Fixes](phpstan-array-types-fixes.md) - **⭐ NUOVO** - Correzioni tipi array mancanti
 - [PHPStan Fixes](./phpstan_fixes.md)
+<<<<<<< HEAD
+=======
+- [PHPStan Fixes (Current)](./phpstan-fixes.md) - **⭐ NUOVO** - Fixes attuali PHPStan
+>>>>>>> 64fb2fa (.)
 - [PHPStan Level 9](./PHPSTAN_LEVEL9_FIXES.md)
 - [PHPStan Level 10](./PHPSTAN_LEVEL10_FIXES.md)
 

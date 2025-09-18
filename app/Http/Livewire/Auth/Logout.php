@@ -27,7 +27,10 @@ class Logout extends Component
 
     /**
      * Esegui logout, invalidazione sessione e redirect.
+<<<<<<< HEAD
      * @return \Illuminate\Http\RedirectResponse|null
+=======
+>>>>>>> 64fb2fa (.)
      */
     public function mount() {
         try {
@@ -58,8 +61,13 @@ class Logout extends Component
                 ]);
             }
             
+<<<<<<< HEAD
             // Redirect alla pagina di login
             return redirect()->route('login');
+=======
+            // Redirect alla pagina di login usando JavaScript
+            $this->redirect(route('login'));
+>>>>>>> 64fb2fa (.)
         } catch (\Exception $e) {
             Log::error('Logout failed', [
                 'error' => $e->getMessage(),
@@ -67,7 +75,11 @@ class Logout extends Component
             ]);
 
             session()->flash('error', __('Si è verificato un errore durante il logout'));
+<<<<<<< HEAD
             return redirect()->back();
+=======
+            $this->redirect()->back();
+>>>>>>> 64fb2fa (.)
         }
     }
 

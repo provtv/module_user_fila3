@@ -107,9 +107,15 @@ class Login extends Component implements HasForms
     /**
      * Esegue l'autenticazione dell'utente.
      *
+<<<<<<< HEAD
      * @return RedirectResponse|void
      */
     public function authenticate() {
+=======
+     * @return RedirectResponse|null
+     */
+    public function authenticate(): ?\Illuminate\Http\RedirectResponse {
+>>>>>>> 64fb2fa (.)
         try {
             /** @var array{email: string, password: string, remember?: bool} $data */
             $data = $this->validate();
@@ -132,6 +138,11 @@ class Login extends Component implements HasForms
             $this->addError('email', __('Si è verificato un errore durante il login. Riprova più tardi.'));
             report($e);
         }
+<<<<<<< HEAD
+=======
+        
+        return null;
+>>>>>>> 64fb2fa (.)
     }
 
     /**
